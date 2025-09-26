@@ -8,10 +8,11 @@
 
 This repository contains a Proof-of-Concept (PoC) for a wiper malware, written in C++. The primary goal of this project is to demonstrate the alarming effectiveness of a simple approach to data destruction that currently evades detection by the vast majority of commercial antivirus (AV) engines on VirusTotal.
 
-Unlike sophisticated malware samples which employ anti-analysis techniques (e.g., packing, obfuscation, VM/Sandbox evasion), this PoC achieves a very low detection rate by relying on two simple key strategies:
+Unlike sophisticated malware samples which employ anti-analysis techniques (e.g., packing, obfuscation, VM/Sandbox evasion), this PoC achieves a very low detection rate by relying on three simple key strategies:
 
 1.  **Partial Overwrite:** Instead of fully overwriting files with null-bytes, which is a common signature for wipers, this malware overwrites only the **first 3/8ths (37.5%)** of each target file's content. This is often enough to corrupt the file structure and make it irrecoverable), while being a less common pattern for AV signatures, both statically (using YARA with opcode patterns) or dynamically.
-2.  **Targeted File Selection:** The malware does not wipe the entire filesystem. Instead, it searches for files that are most likely to be valuable, thereby maximizing potential damage with minimal activity. This also helps avoid triggering detections based on mass file operations. The search is done by looking for the largest files that have been accessed in the last year.
+2.  **Memory Mapping:** Instead of using normal file-interaction APIs (like WriteFile), the malware uses memory-mapping to wipe the files. This technique is both faster for large files & more evasive. This approach is increasingly common in ransomware (used, for example, by Maze), so implementing it here seemed to be an interesting idea.
+3.  **Targeted File Selection:** The malware does not wipe the entire filesystem. Instead, it searches for files that are most likely to be valuable, thereby maximizing potential damage with minimal activity. This also helps avoid triggering detections based on mass file operations. The search is done by looking for the largest files that have been accessed in the last year.
 
 ## Key Findings & Security Implications
 
