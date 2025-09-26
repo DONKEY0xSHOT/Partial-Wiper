@@ -4,8 +4,6 @@
 #include <queue>
 #include <Windows.h>
 #include <iostream>
-#include <algorithm>
-#include <stdexcept>
 
 // Struct for info about a file
 struct FileInfo {
@@ -25,4 +23,5 @@ void SearchDirectory(
 );
 
 // Get the time one year ago
+
 FILETIME GetTimeOneYearAgo();
