@@ -22,6 +22,7 @@ As of the time of its initial publication of this repo (September 26th 2025), th
 
 <img width="1146" height="194" alt="VT" src="https://github.com/user-attachments/assets/6cf8bded-d751-44bf-8aee-89109d9770ba" />
 
+
 Furthermore, VirusTotal's behavioral analysis did not flag the sample as malicious at all, indicating that its dynamic runtime behavior also evaded detection by automated sandbox solutions (Jujubox, Zenbox & CAPE Sandbox).
 <img width="1147" height="510" alt="image" src="https://github.com/user-attachments/assets/6a727c8c-6468-47ef-9c3a-98cf3af8a5df" />
 
