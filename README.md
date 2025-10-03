@@ -33,7 +33,7 @@ This extremely low detection rate is significant for the security community beca
 *   **It demonstrates that sophistication is not always necessary for evasion.** Even without any advanced anti-analysis features, a cleverly designed attack vector can remain largely undetected.
 *   **The existing detections appear to be generic.** The signatures from MaxSecure and SecureAge are highly generic (`susgen` for "suspicious generic," and the broad classification of `Malicious`). This suggests that these detections may be based on heuristic luck or overly broad rules rather than a specific, robust signature for this type of partial overwrite behavior. It is most probably not a tailored identification of the threat.
 
-This PoC serves as a stark reminder that both wiper and ransomware malware could adopt similar partial destruction methods to evade detection while still causing significant harm. Defensive solutions need to evolve to detect anomalous patterns of file modification and data destruction, not just the "noisy" traditional methods.
+This PoC serves as a reminder that both wiper and ransomware malware could adopt similar partial destruction methods to evade detection while still causing significant harm. Defensive solutions need to evolve to detect anomalous patterns of file modification and data destruction, not just the "noisy" traditional methods.
 
 ## Technical Info
 
